@@ -1,11 +1,20 @@
 import React, { useState } from "react";
-
+import { updateTextInput } from "./actions/textInput";
 interface TextInputProps {
   placeholder?: string;
+  apiUrl: string;
   onBlur?: (value: string) => void;
 }
 
-const TextInput: React.FC<TextInputProps> = ({ placeholder, onBlur }) => {
+const TextInput: React.FC<TextInputProps> = ({
+  placeholder,
+  apiUrl,
+  onBlur,
+}) => {
+  async function handleBlur(value: string) {
+    console.log("update data", value);
+    updateTextInput("http://localhost:3000/api/text-input", value);
+  }
   const [value, setValue] = useState("");
 
   return (
@@ -16,7 +25,7 @@ const TextInput: React.FC<TextInputProps> = ({ placeholder, onBlur }) => {
       onChange={(e) => setValue(e.target.value)}
       onBlur={() => {
         console.log(value);
-        onBlur?.(value);
+        handleBlur?.(value);
       }}
       style={{
         padding: "8px",
