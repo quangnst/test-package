@@ -1,8 +1,8 @@
 {
   "name": "hnk_cms_package",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "HNK CMS Package",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "prepare": "npm run build",
