@@ -22,7 +22,7 @@ const TextInput: React.FC<TextInputProps> = ({
         "Hard disk size": "1 TB",
       },
     };
-    await updateTextInput("https://api.restful-api.dev/objects", payload);
+    await updateTextInput(apiUrl, payload);
   }
   const [value, setValue] = useState("");
 
