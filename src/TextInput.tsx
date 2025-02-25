@@ -13,7 +13,7 @@ const TextInput: React.FC<TextInputProps> = ({
 }) => {
   async function handleBlur(value: string) {
     console.log("update data", value);
-    updateTextInput("http://localhost:3000/api/text-input", value);
+    await updateTextInput("http://localhost:3000/api/text-input", value);
   }
   const [value, setValue] = useState("");
 
