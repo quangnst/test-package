@@ -1,9 +1,9 @@
 "use server";
 
-export async function updateTextInput(apiUrl: string, value: string) {
+export async function updateTextInput(apiUrl: string, payload: any) {
       const res = await fetch(apiUrl, {
       method: "POST",
-      body: JSON.stringify({ value }),
+      body: JSON.stringify({ payload }),
       headers: { "Content-Type": "application/json" },
     });
 

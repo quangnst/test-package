@@ -13,7 +13,16 @@ const TextInput: React.FC<TextInputProps> = ({
 }) => {
   async function handleBlur(value: string) {
     console.log("update data", value);
-    await updateTextInput("http://localhost:3000/api/text-input", value);
+    const payload = {
+      name: "Apple MacBook Pro 16",
+      data: {
+        year: 2019,
+        price: 1849.99,
+        "CPU model": "Intel Core i9",
+        "Hard disk size": "1 TB",
+      },
+    };
+    await updateTextInput("https://api.restful-api.dev/objects", payload);
   }
   const [value, setValue] = useState("");
 
