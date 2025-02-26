@@ -1,4 +1,8 @@
-import { jsx as _jsx } from "react/jsx-runtime";
-export const Select = ({ options, defaultValue, onChange, }) => {
-    return (_jsx("select", { defaultValue: defaultValue, onChange: (e) => onChange === null || onChange === void 0 ? void 0 : onChange(e.target.value), style: { padding: "8px" }, children: options.map((option) => (_jsx("option", { value: option.value, children: option.label }, option.value))) }));
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Select = void 0;
+const jsx_runtime_1 = require("react/jsx-runtime");
+const Select = ({ options, defaultValue, onChange, }) => {
+    return ((0, jsx_runtime_1.jsx)("select", { defaultValue: defaultValue, onChange: (e) => onChange === null || onChange === void 0 ? void 0 : onChange(e.target.value), style: { padding: "8px" }, children: options.map((option) => ((0, jsx_runtime_1.jsx)("option", { value: option.value, children: option.label }, option.value))) }));
 };
+exports.Select = Select;
