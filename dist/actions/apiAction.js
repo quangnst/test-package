@@ -15,6 +15,7 @@ function callApi(input, apiEndpoint) {
     return __awaiter(this, void 0, void 0, function* () {
         // Logic gọi API thực tế sẽ được thực hiện ở đây
         // Ví dụ dùng fetch để gọi API
+        console.log("use server Calling API with input:", input);
         try {
             const res = yield fetch(apiEndpoint, {
                 method: "POST",

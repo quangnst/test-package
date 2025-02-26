@@ -17,10 +17,11 @@ const Input = ({ placeholder = "Enter something...", apiEndpoint, }) => {
     const [value, setValue] = (0, react_1.useState)("");
     const [response, setResponse] = (0, react_1.useState)(null);
     const handleSubmit = (e) => __awaiter(void 0, void 0, void 0, function* () {
+        console.log("Calling API with input:", value);
         e.preventDefault();
         const result = yield (0, apiAction_1.callApi)(value, apiEndpoint);
         setResponse(result);
     });
-    return ((0, jsx_runtime_1.jsxs)("form", { onSubmit: handleSubmit, children: [(0, jsx_runtime_1.jsx)("input", { type: "text", value: value, onChange: (e) => setValue(e.target.value), placeholder: placeholder, style: { padding: "8px", marginRight: "8px" } }), (0, jsx_runtime_1.jsx)("button", { type: "submit", children: "Submit" }), response && (0, jsx_runtime_1.jsxs)("p", { children: ["Response: ", response] })] }));
+    return ((0, jsx_runtime_1.jsx)("input", { type: "text", value: value, onChange: (e) => setValue(e.target.value), onBlur: handleSubmit, placeholder: placeholder, style: { padding: "8px", marginRight: "8px" } }));
 };
 exports.default = Input;
