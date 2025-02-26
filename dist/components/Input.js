@@ -17,6 +17,7 @@ const apiAction_1 = require("../actions/apiAction");
 const Input = ({ placeholder = "Enter something...", apiEndpoint, }) => {
     const [value, setValue] = (0, react_1.useState)("");
     const [response, setResponse] = (0, react_1.useState)(null);
+    console.log("aaa", process.env.NEXT_PUBLIC_ADMIN_EMAIL);
     const handleSubmit = (e) => __awaiter(void 0, void 0, void 0, function* () {
         console.log("Calling API with input:", value);
         e.preventDefault();

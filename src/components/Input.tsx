@@ -13,6 +13,7 @@ export const Input = ({
   const [value, setValue] = useState("");
   const [response, setResponse] = useState<string | null>(null);
 
+  console.log("aaa", process.env.NEXT_PUBLIC_ADMIN_EMAIL);
   const handleSubmit = async (e: React.FormEvent) => {
     console.log("Calling API with input:", value);
     e.preventDefault();

@@ -13,14 +13,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.callApi = callApi;
 function callApi(input, apiEndpoint) {
     return __awaiter(this, void 0, void 0, function* () {
-        // Logic gọi API thực tế sẽ được thực hiện ở đây
-        // Ví dụ dùng fetch để gọi API
         try {
             const res = yield fetch(apiEndpoint, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    // Thêm các header bảo mật nếu cần, như API key
                 },
                 body: JSON.stringify({ input }),
             });
