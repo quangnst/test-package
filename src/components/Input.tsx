@@ -14,23 +14,21 @@ const Input = ({
   const [response, setResponse] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
+    console.log("Calling API with input:", value);
     e.preventDefault();
     const result = await callApi(value, apiEndpoint);
     setResponse(result);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        placeholder={placeholder}
-        style={{ padding: "8px", marginRight: "8px" }}
-      />
-      <button type="submit">Submit</button>
-      {response && <p>Response: {response}</p>}
-    </form>
+    <input
+      type="text"
+      value={value}
+      onChange={(e) => setValue(e.target.value)}
+      onBlur={handleSubmit}
+      placeholder={placeholder}
+      style={{ padding: "8px", marginRight: "8px" }}
+    />
   );
 };
 
