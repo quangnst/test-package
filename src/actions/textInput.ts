@@ -1,6 +1,5 @@
-"use server";
-
 export async function updateTextInput(apiUrl: string, payload: any) {
+  "use server";
   console.log("payload", payload, apiUrl);
   const res = await fetch(apiUrl, {
     method: "POST",
