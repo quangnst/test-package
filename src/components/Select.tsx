@@ -5,7 +5,7 @@ interface Option {
   label: string;
 }
 
-const Select = ({
+export const Select = ({
   options,
   defaultValue,
   onChange,
@@ -28,5 +28,3 @@ const Select = ({
     </select>
   );
 };
-
-export default Select;

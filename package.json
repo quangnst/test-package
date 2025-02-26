@@ -1,6 +1,7 @@
 {
   "name": "hnk-custom-components",
   "version": "1.0.0",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -13,13 +14,18 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "typescript": "^5.0.0",
+    "@rollup/plugin-commonjs": "^28.0.2",
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-typescript": "^12.1.2",
     "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0"
+    "@types/react-dom": "^18.2.0",
+    "rollup": "^4.34.8",
+    "typescript": "^5.0.0"
   },
   "peerDependencies": {
     "next": "^14.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  }
+  },
+  "sideEffects": false
 }

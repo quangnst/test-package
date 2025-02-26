@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { callApi } from "../actions/apiAction";
 
-const Input = ({
+export const Input = ({
   placeholder = "Enter something...",
   apiEndpoint,
 }: {
@@ -31,5 +31,3 @@ const Input = ({
     />
   );
 };
-
-export default Input;

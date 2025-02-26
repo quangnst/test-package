@@ -1,4 +1,3 @@
-"use strict";
 "use client";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -9,19 +8,17 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-const jsx_runtime_1 = require("react/jsx-runtime");
-const react_1 = require("react");
-const apiAction_1 = require("../actions/apiAction");
-const Input = ({ placeholder = "Enter something...", apiEndpoint, }) => {
-    const [value, setValue] = (0, react_1.useState)("");
-    const [response, setResponse] = (0, react_1.useState)(null);
+import { jsx as _jsx } from "react/jsx-runtime";
+import { useState } from "react";
+import { callApi } from "../actions/apiAction";
+export const Input = ({ placeholder = "Enter something...", apiEndpoint, }) => {
+    const [value, setValue] = useState("");
+    const [response, setResponse] = useState(null);
     const handleSubmit = (e) => __awaiter(void 0, void 0, void 0, function* () {
         console.log("Calling API with input:", value);
         e.preventDefault();
-        const result = yield (0, apiAction_1.callApi)(value, apiEndpoint);
+        const result = yield callApi(value, apiEndpoint);
         setResponse(result);
     });
-    return ((0, jsx_runtime_1.jsx)("input", { type: "text", value: value, onChange: (e) => setValue(e.target.value), onBlur: handleSubmit, placeholder: placeholder, style: { padding: "8px", marginRight: "8px" } }));
+    return (_jsx("input", { type: "text", value: value, onChange: (e) => setValue(e.target.value), onBlur: handleSubmit, placeholder: placeholder, style: { padding: "8px", marginRight: "8px" } }));
 };
-exports.default = Input;
